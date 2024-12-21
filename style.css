@@ -5,4 +5,121 @@
     padding: 0;
     box-sizing: border-box;
     font-family: "Poppins", sans-serif;
+    user-select: none;
+}
+
+body {
+    background: rgb(0, 0, 0);
+    background: radial-gradient(circle, rgba(0, 0, 0, 1) 0%, rgba(70, 98, 252, 1) 100%);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    color: black;
+    font-size: 1.5rem;
+    height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.clock {
+    width: 500px;
+    height: 500px;
+    background-color: transparent;
+    border-radius: 50%;
+    border: solid 5px black;
+    position: relative;
+
+    background-image: url(./src/image/background-img.png);
+    background-position: left;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.clock .number {
+    --rotation: 0;
+    padding: 20px;
+
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    font-size: 1.8rem;
+    font-weight: 700;
+    rotate: calc(var(--rotation) * 1deg);
+}
+
+.clock .number.number-1 {
+    --rotation: 30;
+}
+.clock .number.number-2 {
+    --rotation: 60;
+}
+.clock .number.number-3 {
+    --rotation: 90;
+}
+.clock .number.number-4 {
+    --rotation: 120;
+}
+.clock .number.number-5 {
+    --rotation: 150;
+}
+.clock .number.number-6 {
+    --rotation: 180;
+}
+.clock .number.number-7 {
+    --rotation: 210;
+}
+.clock .number.number-8 {
+    --rotation: 240;
+}
+.clock .number.number-9 {
+    --rotation: 270;
+}
+.clock .number.number-10 {
+    --rotation: 300;
+}
+.clock .number.number-11 {
+    --rotation: 330;
+}
+
+.clock .hand {
+    --rotation: 0;
+
+    position: absolute;
+    bottom: 50%;
+    left: 50%;
+    width: 10px;
+    height: 38%;
+    background-color: black;
+    transform: translateX(-50%) rotate(calc(var(--rotation) * 1deg));
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+
+    z-index: 10;
+}
+
+.clock .hand.seconds {
+    width: 3.5px;
+    height: 36%;
+    background-color: red;
+}
+
+.clock .hand.hours {
+    width: 10px;
+    height: 32%;
+    background-color: black;
+}
+
+.clock::after {
+    content: "";
+    position: absolute;
+    background-color: black;
+    z-index: 11;
+    width: 15px;
+    height: 15px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
 }
