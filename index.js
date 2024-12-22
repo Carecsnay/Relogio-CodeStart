@@ -2,6 +2,9 @@ const hoursHand = document.querySelector(".hand.hours");
 const minutesHand = document.querySelector(".hand.minutes");
 const secondsHand = document.querySelector(".hand.seconds");
 
+const audio = document.querySelector("#Test_Audio");
+audio.volume = 0.5; //audio 50% pra não assustar os outros.
+
 const setClock = () => {
     const currentDate = new Date();
 
