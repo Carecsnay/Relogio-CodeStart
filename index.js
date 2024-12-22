@@ -15,6 +15,8 @@ const setClock = () => {
     setRotation(secondsHand, secondsPercentage);
     setRotation(minutesHand, minutesPercentage);
     setRotation(hoursHand, hoursPercentage);
+
+    requestAnimationFrame(setClock);
 };
 
 const setRotation = (element, rotationPercentage) => {
